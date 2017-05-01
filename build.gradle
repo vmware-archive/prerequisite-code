@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url("http://platform-acceleration-lab-maven.s3.amazonaws.com") }
+    }
+
+    dependencies {
+        classpath("io.pivotal.pal.assignments:assignments-plugin:+")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+    }
+}
+
+apply plugin: "java"
+apply plugin: "org.springframework.boot"
+apply plugin: "io.pivotal.pal.assignments.plugin"
+
+
+jar {
+    baseName = "prerequisite"
+}
+
+assignments {
+    apiUrl = "https://palace.cfapps.io"
+    email = ""
+    labConfig = [
+        prerequisiteUrl: ""
+    ]
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+}
