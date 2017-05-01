@@ -30,18 +30,13 @@ xcode-select --install
 If you're working on windows then git is bundled with Git Bash, which
 you installed above.
 
-Once Git is installed clone this sample project.
+Once Git is installed clone this sample project and go to its directory.
 ```bash
 git clone https://github.com/platform-acceleration-lab/prerequisite-code.git
+cd prerequisite-code
 ```
 
 Here's a helpful Git [refresher](https://try.github.io).
-
-Then cd into the directory.
-
-```bash
-cd ~/workspace/prerequisite-code/
-```
 
 # Java
 [Download](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
@@ -93,7 +88,7 @@ We'll use package managers to install much of the course software.
 We recommend [Homebrew](https://brew.sh/) on MacOS and [Chocolatey](https://chocolatey.org/)
 on Windows.
 
-# CF cli
+# Cloud Foundry CLI
 Now that your package manager is installed, use it to install the
 [Cloud Foundry CLI](https://github.com/cloudfoundry/cli).
 
@@ -160,7 +155,6 @@ assignments {
 // ...
 ```
 
-
 Submit you prerequisite status to us with the following command.
 
 ```bash
@@ -172,5 +166,10 @@ If you see `BUILD FAILED` then check your app's deployment and fix any
 errors.
 
 # Other software
-If you'd like to be extra prepared install MySQL, Maven, and Gradle with
-your package manager.
+Install the following packages using your package manager.
+
+- MySQL
+- Gradle
+- Maven
+- MongoDB
+- RabbitMQ
