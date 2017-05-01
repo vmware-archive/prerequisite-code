@@ -32,7 +32,7 @@ you installed above.
 
 Once Git is installed clone this sample project.
 ```bash
-git clone git@github.com:platform-acceleration-lab/prerequisite-code.git
+git clone https://github.com/platform-acceleration-lab/prerequisite-code.git
 ```
 
 Here's a helpful Git [refresher](https://try.github.io).
