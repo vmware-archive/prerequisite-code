@@ -1,9 +1,11 @@
 # Welcome
 
-As PAL is a hands-on coding course, it will be helpful for you to come
-prepared to the first class.
+As the Platform Acceleration Lab is a hands-on coding course, it will be
+helpful for you to come prepared to the first class.
 We will run through a quick exercise that will ensure that you have the
 correct software installed.
+After completing this exercise take some time to familiarize yourself
+with these technologies.
 
 # Bash terminal
 We will be using a bash terminal for development throughout the course.
@@ -27,7 +29,7 @@ with
 xcode-select --install
 ```
 
-If you're working on windows then git is bundled with Git Bash, which
+If you're working on Windows then Git is bundled with Git Bash, which
 you installed above.
 
 Once Git is installed clone this sample project and go to its directory.
@@ -36,7 +38,8 @@ git clone https://github.com/platform-acceleration-lab/prerequisite-code.git
 cd prerequisite-code
 ```
 
-Here's a helpful Git [refresher](https://try.github.io).
+Here's a helpful Git [refresher](https://try.github.io), if you are a
+bit rusty.
 
 # Java
 [Download](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
