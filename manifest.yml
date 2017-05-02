@@ -1,6 +1,5 @@
 ---
 applications:
 - name: prerequisite
-  buildpack: java_buildpack
   path: build/libs/prerequisite.jar
   random-route: true
