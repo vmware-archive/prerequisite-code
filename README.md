@@ -14,7 +14,7 @@ prefer [Git Bash](https://git-scm.com/downloads).
 
 All of the software we write during the course will go in a `~/workspace`
 directory.
-Create this directory now.
+Open Git Bash and use it to create this directory now.
 
 ```bash
 mkdir ~/workspace
@@ -95,15 +95,14 @@ on Windows.
 Now that your package manager is installed, use it to install the
 [Cloud Foundry CLI](https://github.com/cloudfoundry/cli).
 
-**Homebrew:**
+**MacOS:**
 ```bash
 brew install cloudfoundry/tap/cf-cli
 ```
 
-**Chocolatey:**
-```bash
-choco install cloudfoundry-cli
-```
+**Windows:**
+Navigate to the [CF CLI download page](https://github.com/cloudfoundry/cli/releases)
+and install the latest release.
 
 Sign up for a [free trial account](https://account.run.pivotal.io/z/uaa/sign-up)
 for [Pivotal Web Services](https://run.pivotal.io/faq/).
