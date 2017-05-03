@@ -1,4 +1,4 @@
-# Welcome
+# ![pal](images/pal-small.png) Welcome
 
 As the Platform Acceleration Lab is a hands-on coding course, it will be
 helpful for you to come prepared to the first class.
