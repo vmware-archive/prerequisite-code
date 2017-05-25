@@ -20,11 +20,8 @@ jar {
 }
 
 assignments {
-    apiUrl = "https://palace.cfapps.io"
+    apiUrl = "https://pal-caddy.cfapps.io"
     email = ""
-    labConfig = [
-        prerequisiteUrl: ""
-    ]
 }
 
 repositories {

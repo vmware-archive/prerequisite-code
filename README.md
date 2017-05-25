@@ -142,25 +142,13 @@ If everything is working you should see your message
 # Submit your results
 
 Once you are confident that your app is running, you're ready to submit.
-Edit the `build.gradle` file, filling in your email address and app url.
-Your app url must be a fully-qualified url (it must include `http://`).
- 
-```groovy
-// ...
-assignments {
-    apiUrl = "https://palace.cfapps.io"
-    email = "your-email-address@example.com"
-    labConfig = [
-        prerequisiteUrl: "http://your-app-url"
-    ]
-}
-// ...
-```
+Edit the `build.gradle` file, filling in your email address.
 
 Submit you prerequisite status to us with the following command.
+_Note:_ The prerequisiteUrl must be a fully-qualified url (it must include `http://`).
 
 ```bash
-./gradlew submitPrerequisites
+./gradlew submitPrerequisites -PprerequisiteUrl=http://your-app-url
 ```
 
 If you see `BUILD SUCCESSFUL` then you're done.
