@@ -52,9 +52,12 @@ does not return the correct version then you may need to configure
 `JAVA_HOME`.
 
 Once Java is installed build the sample project.
+
 ```bash
 ./gradlew build
 ```
+ _Note: We can do this with the `./gradlew` command since we included the
+gradle wrapper with the repository._
 
 # IntelliJ
 We strongly recommend using [IntelliJ](https://www.jetbrains.com/idea/)
@@ -143,6 +146,13 @@ If everything is working you should see your message
 
 Once you are confident that your app is running, you're ready to submit.
 Edit the `build.gradle` file, filling in your email address.
+
+```groovy
+assignments {
+    apiUrl = "https://pal-caddy.cfapps.io"
+    email = "YOUR EMAIL GOES HERE"
+}
+```
 
 Submit you prerequisite status to us with the following command.
 _Note:_ The prerequisiteUrl must be a fully-qualified url (it must include `http://`).
