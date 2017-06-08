@@ -145,12 +145,13 @@ If everything is working you should see your message
 # Submit your results
 
 Once you are confident that your app is running, you're ready to submit.
-Edit the `build.gradle` file, filling in your email address.
+Edit the `build.gradle` file, filling in your email address and provided cohort identifier.
 
 ```groovy
 assignments {
     apiUrl = "https://pal-caddy.cfapps.io"
     email = "YOUR EMAIL GOES HERE"
+    cohortIdentifier = "YOUR-COHORT-IDENTIFIER-GOES-HERE"
 }
 ```
 
