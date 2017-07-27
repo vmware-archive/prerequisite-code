@@ -8,12 +8,13 @@ After completing this exercise take some time to familiarize yourself
 with these technologies.
 
 # Bash terminal
+
 We will be using a bash terminal for development throughout the course.
 On MacOS we prefer [iTerm](https://www.iterm2.com/) and on Windows we
 prefer [Git Bash](https://git-scm.com/downloads).
 
-All of the software we write during the course will go in a `~/workspace`
-directory.
+All of the software we write during the course will go in a
+`~/workspace` directory.
 Open Git Bash and use it to create this directory now.
 
 ```bash
@@ -22,9 +23,10 @@ cd ~/workspace
 ```
 
 # Git
+
 Git will be used to access course materials and publish our results.
 Git is included in the MacOS Command Line Tools, which you can install
-with
+with:
 ```bash
 xcode-select --install
 ```
@@ -42,6 +44,7 @@ Here's a helpful Git [refresher](https://try.github.io), if you are a
 bit rusty.
 
 # Java
+
 [Download](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 an install an up-to-date version of Java.
 After installation, if
@@ -56,10 +59,11 @@ Once Java is installed build the sample project.
 ```bash
 ./gradlew build
 ```
- _Note: We can do this with the `./gradlew` command since we included the
-gradle wrapper with the repository._
+_We can build with the `./gradlew` command since we included the gradle
+wrapper with the repository._
 
 # IntelliJ
+
 We strongly recommend using [IntelliJ](https://www.jetbrains.com/idea/)
 as your IDE.
 IntelliJ offers [many advantages](https://blog.jetbrains.com/idea/2016/03/enjoying-java-and-being-more-productive-with-intellij-idea/)
@@ -90,7 +94,7 @@ public String message() {
 ```
 
 # Package manager
-We'll use package managers to install much of the course software.
+We will use package managers to install much of the course software.
 We recommend [Homebrew](https://brew.sh/) on MacOS and [Chocolatey](https://chocolatey.org/)
 on Windows.
 
@@ -145,28 +149,31 @@ If everything is working you should see your message
 # Submit your results
 
 Once you are confident that your app is running, you're ready to submit.
-Edit the `build.gradle` file, filling in your email address and provided cohort identifier.
+Edit the `build.gradle` file, filling in your email address and provided
+cohort identifier.
 
 ```groovy
 assignments {
     apiUrl = "https://pal-caddy.cfapps.io"
     email = "YOUR EMAIL GOES HERE"
-    cohortIdentifier = "YOUR-COHORT-IDENTIFIER-GOES-HERE"
+    cohortIdentifier = 999999
 }
 ```
 
 Submit you prerequisite status to us with the following command.
-_Note:_ The prerequisiteUrl must be a fully-qualified url (it must include `http://`).
+The `prerequisiteUrl` must be a fully-qualified url (it must include
+`http://`).
 
 ```bash
 ./gradlew submitPrerequisites -PprerequisiteUrl=http://your-app-url
 ```
 
-If you see `BUILD SUCCESSFUL` then you're done.
+If you see `BUILD SUCCESSFUL` then you are done.
 If you see `BUILD FAILED` then check your app's deployment and fix any
 errors.
 
 # Other software
+
 Install the following packages using your package manager.
 
 - MySQL
@@ -174,3 +181,8 @@ Install the following packages using your package manager.
 - Maven
 - MongoDB
 - RabbitMQ
+
+# References
+
+Check out the [PAL links](https://platform-acceleration-lab-links.cfapps.io/)
+for recommended reading.
