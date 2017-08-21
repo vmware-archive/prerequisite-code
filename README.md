@@ -111,6 +111,9 @@ brew install cloudfoundry/tap/cf-cli
 Navigate to the [CF CLI download page](https://github.com/cloudfoundry/cli/releases)
 and install the latest release.
 
+We recommend using the CF CLI with the command prompt or with
+PowerShell, as there are some known issues using the CLI with Git Bash. 
+
 Sign up for a [free trial account](https://account.run.pivotal.io/z/uaa/sign-up)
 for [Pivotal Web Services](https://run.pivotal.io/faq/).
 [Login](https://github.com/cloudfoundry/cli/#getting-started) to your
