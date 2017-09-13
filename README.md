@@ -22,6 +22,10 @@ mkdir ~/workspace
 cd ~/workspace
 ```
 
+Some Windows command line utilities do not work well with Git Bash.
+In these cases we like to use [PowerShell](https://microsoft.com/powershell),
+which is installed by default on Windows. 
+
 # Git
 
 Git will be used to access course materials and publish our results.
@@ -31,7 +35,7 @@ with:
 xcode-select --install
 ```
 
-If you're working on Windows then Git is bundled with Git Bash, which
+If you are working on Windows then Git is bundled with Git Bash, which
 you installed above.
 
 Once Git is installed clone this sample project and go to its directory.
@@ -40,7 +44,7 @@ git clone https://github.com/platform-acceleration-lab/prerequisite-code.git
 cd prerequisite-code
 ```
 
-Here's a helpful Git [refresher](https://try.github.io), if you are a
+Here is a helpful Git [refresher](https://try.github.io), if you are a
 bit rusty.
 
 # Java
@@ -56,11 +60,18 @@ does not return the correct version then you may need to configure
 
 Once Java is installed build the sample project.
 
+**MacOS:**
 ```bash
 ./gradlew build
 ```
-_We can build with the `./gradlew` command since we included the gradle
-wrapper with the repository._
+
+**Windows:**
+```bash
+gradlew build
+``` 
+
+We can build with the [gradle wrapper script](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
+since we included a gradle wrapper with the repository.
 
 # IntelliJ
 
@@ -122,15 +133,25 @@ new account with the CF CLI
 cf login -a api.run.pivotal.io
 ```
 
-# Deploying to CF
+# Deploy to CF
+
 Build your application again, then push it to Cloud Foundry
+
+**MacOS:**
 ```bash
 ./gradlew build
 cf push
 ```
 
+**Windows:**
+```bash
+gradlew build
+cf push
+```
+
 You will see some output when the deployment is complete.
-Note your app's route (the value after `urls: `) from this output:
+Your app's route will be displayed in the output after `urls: `.
+
 ```no-highlight
 requested state: started
 instances: 1/1
@@ -151,7 +172,8 @@ If everything is working you should see your message
 
 # Submit your results
 
-Once you are confident that your app is running, you're ready to submit.
+Once you are confident that your app is running, you are ready to
+submit.
 Edit the `build.gradle` file, filling in your email address and provided
 cohort identifier.
 
@@ -167,8 +189,14 @@ Submit you prerequisite status to us with the following command.
 The `prerequisiteUrl` must be a fully-qualified url (it must include
 `http://`).
 
+**MacOS:**
 ```bash
 ./gradlew submitPrerequisites -PprerequisiteUrl=http://your-app-url
+```
+
+**Windows:**
+```bash
+gradlew submitPrerequisites -PprerequisiteUrl=http://your-app-url
 ```
 
 If you see `BUILD SUCCESSFUL` then you are done.
@@ -177,13 +205,17 @@ errors.
 
 # Other software
 
-Install the following packages using your package manager.
+Install the following packages using either Homebrew or Chocolatey.
+If you are using Windows and would rather not use Chocolatey, use the
+provided links.
 
-- MySQL
-- Gradle
-- Maven
-- MongoDB
-- RabbitMQ
+- MySQL ([download](https://dev.mysql.com/downloads/installer/))
+- Gradle ([download](https://gradle.org/install/#manually))
+- Maven ([download](https://maven.apache.org/guides/getting-started/windows-prerequisites.html))
+- MongoDB ([download](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/))
+- RabbitMQ ([download](https://www.rabbitmq.com/install-windows.html))
+- Flyway ([download](https://flywaydb.org/getstarted/download))
+- TomEE Plume (`tomee-plume` on Homebrew or [Windows download](http://tomee.apache.org/installing-tomee.html))
 
 # References
 
