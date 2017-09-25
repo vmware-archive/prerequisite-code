@@ -216,6 +216,10 @@ provided links.
 - RabbitMQ ([download](https://www.rabbitmq.com/install-windows.html))
 - Flyway ([download](https://flywaydb.org/getstarted/download))
 - TomEE Plume (`tomee-plume` on Homebrew or [Windows download](http://tomee.apache.org/installing-tomee.html))
+- Graphviz ([download](http://www.graphviz.org/))
+- Minio ([download](https://www.minio.io/downloads.html))
+- Redis (`redis` on Homebrew or Chocolatey)
+- NGNIX (`ngnix` on Homebrew or Chocolatey)
 
 # References
 
