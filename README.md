@@ -219,7 +219,7 @@ provided links.
 - Graphviz ([download](http://www.graphviz.org/))
 - Minio ([download](https://www.minio.io/downloads.html))
 - Redis (`redis` on Homebrew or Chocolatey)
-- NGNIX (`ngnix` on Homebrew or Chocolatey)
+- NGNINX (`brew tap homebrew/nginx`, `brew install nginx-full --with-upload-module` on Homebrew or `choco install nginx` Chocolatey)
 
 # References
 
