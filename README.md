@@ -7,54 +7,40 @@ correct software installed.
 After completing this exercise take some time to familiarize yourself
 with these technologies.
 
-We recommend using MacOS or Linux as your operating system.
-
-
 # Package manager
 
-We will use package managers to install much of the course software.
+We suggest using a package manager to install course software.
 
-**Debian-Based Linux:**
+- **MacOS:**
 
-[`apt`](https://wiki.debian.org/Apt) (`apt search PACKAGE` to search)
+    [Homebrew](https://brew.sh/) (`brew search PACKAGE` to search; see
+    also `brew info FORMULA`, `brew service --help`)
 
-**MacOS:**
+- **Windows:**
 
-[Homebrew](https://brew.sh/) (`brew search PACKAGE` to search; see also `brew info FORMULA`, `brew service --help`)
+    [Chocolatey](https://chocolatey.org/) (`choco search FILTER` to
+    search)
 
-**Windows:**
+- **Debian-Based Linux:**
 
-[Chocolatey](https://chocolatey.org/) (`choco search FILTER` to search)
-
+    [Apt](https://wiki.debian.org/Apt) (`apt search PACKAGE` to search)
 
 # Bash terminal
 
-We will be using a bash terminal for development throughout the course. 
+We will be using a bash terminal for development throughout the course.
+On MacOS we prefer [iTerm](https://www.iterm2.com/) and on Windows we
+prefer [Git Bash](https://git-scm.com/downloads).
+There are many great terminal applications for Linux.
 
-**Linux:**
+Some Windows command line utilities do not work well with Git Bash.
+In these cases we like to use [PowerShell](https://microsoft.com/powershell),
+which is installed by default on Windows.
 
-Any Linux terminal will work.
-
-**MacOS:**
-
-[iTerm](https://www.iterm2.com/)
-
-**Windows:**
-
-On Windows we prefer [Git Bash](https://git-scm.com/downloads).
-
-Some Windows command line utilities, specifically the Cloud Foundry CLI
-tool "`cf`" do not work well with Git Bash.
-In these cases you should use [PowerShell](https://microsoft.com/powershell),
-which is installed by default on Windows, but for all other cases you should
-use a bash shell to ensure the CLI commands in the course work properly. 
-
-
-# Course Code Organization
+# Code Organization
 
 All of the software we write during the course will go in a
-`~/workspace` directory.  You should create/clone all course code
-repos in this directory.
+`~/workspace` directory.
+All course code repos will be nested under this directory.
 
 Open your bash terminal and use it to create this directory now.
 
@@ -67,34 +53,35 @@ cd ~/workspace
 
 Git will be used to access course materials and publish our results.
 
-**Debian-Based Linux:**
+- **MacOS:**
 
-`sudo apt install git`
+    Git is included in the MacOS Command Line Tools, which you can
+    install with:
+    
+    ```bash
+    xcode-select --install
+    ```
 
-**MacOS:**
+- **Windows:**
 
-Git is included in the MacOS Command Line Tools, which you can install
-with:
-```bash
-xcode-select --install
-```
+    Git is bundled with Git Bash, which you installed above.
 
-**Windows:**
+- **Debian-Based Linux:**
 
-Git is bundled with Git Bash, which you installed above.
+    ```bash
+    sudo apt install git
+    ```
 
 Here is a helpful Git [refresher](https://try.github.io), if you are a
 bit rusty.
 
-# Clone the `prerequisite-code` repo
-
-Once Git is installed clone this sample project and go to its directory.
+Once Git is installed, clone this sample project and go to its
+directory.
 ```bash
 cd ~/workspace
 git clone https://github.com/platform-acceleration-lab/prerequisite-code.git
 cd prerequisite-code
 ```
-
 
 # Java
 
@@ -109,22 +96,23 @@ does not return the correct version then you may need to configure
 
 Once Java is installed build the sample project.
 
-**Linux and MacOS:**
-```bash
-./gradlew build
-```
+- **Linux and MacOS:**
+    ```bash
+    ./gradlew build
+    ```
 
-**Windows:**
-```bash
-gradlew build
-``` 
+- **Windows:**
+    ```bash
+    gradlew build
+    ```
 
 We can build with the [gradle wrapper script](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
 since we included a gradle wrapper with the repository.
 
 # IntelliJ
 
-We strongly recommend using [IntelliJ](https://www.jetbrains.com/idea/) as your IDE.
+We strongly recommend using [IntelliJ](https://www.jetbrains.com/idea/)
+as your IDE.
 IntelliJ offers [many advantages](https://blog.jetbrains.com/idea/2016/03/enjoying-java-and-being-more-productive-with-intellij-idea/)
 over its competitors, especially when developing distributed systems.
 
@@ -142,11 +130,8 @@ The time you save and insights you gain into your code will far outweigh
 the cost of the Ultimate edition.
 
 Once IntelliJ is installed, [configure your JDK](https://www.jetbrains.com/help/idea/2017.1/working-with-sdks.html?search=sdk#manage_sdks).
-
-
-# Modify the sample project
-
-Next, open the sample project. Edit the controller to return the string `I'm ready for PAL`.
+Next, open the sample project.
+Edit the controller to return the string `I'm ready for PAL`.
 
 ```java
 @GetMapping
@@ -155,18 +140,24 @@ public String message() {
 }
 ```
 
+# Cloud Foundry
 
-# Cloud Foundry CLI
+First, install the Cloud Foundry CLI
 
-Install the [Cloud Foundry CLI](https://github.com/cloudfoundry/cli).
+- **MacOS:**
+    ```bash
+    brew install cloudfoundry/tap/cf-cli
+    ```
 
-On Windows, we recommend using the CF CLI with the command prompt or with
-PowerShell, as there are some known issues using the CLI with Git Bash. 
+- **Windows and Linux:**
+    Navigate to the [CF CLI download page](https://github.com/cloudfoundry/cli/releases)
+    and install the latest release.
 
+    On Windows, we recommend using the CF CLI with the command prompt or
+    with PowerShell, as there are some known issues using the CLI with
+    Git Bash.
 
-# Pivotal Web Services Account
-
-Sign up for a [free trial account](https://account.run.pivotal.io/z/uaa/sign-up)
+Next, sign up for a [free trial account](https://account.run.pivotal.io/z/uaa/sign-up)
 for [Pivotal Web Services](https://run.pivotal.io/faq/).
 [Login](https://github.com/cloudfoundry/cli/#getting-started) to your
 new account with the CF CLI
@@ -178,17 +169,17 @@ cf login -a api.run.pivotal.io
 
 Build your application again, then push it to Cloud Foundry
 
-**Linux and MacOS:**
-```bash
-./gradlew build
-cf push
-```
+- **Linux and MacOS:**
+    ```bash
+    ./gradlew build
+    cf push
+    ```
 
-**Windows:**
-```bash
-gradlew build
-cf push
-```
+- **Windows:**
+    ```bash
+    gradlew build
+    cf push
+    ```
 
 You will see some output when the deployment is complete.
 Your app's route will be displayed in the output after `urls: `.
@@ -230,15 +221,15 @@ Submit you prerequisite status to us with the following command.
 The `prerequisiteUrl` must be a fully-qualified url (it must include
 `http://`).
 
-**Linux and MacOS:**
-```bash
-./gradlew submitPrerequisites -PprerequisiteUrl=http://your-app-url
-```
+- **Linux and MacOS:**
+    ```bash
+    ./gradlew submitPrerequisites -PprerequisiteUrl=http://your-app-url
+    ```
 
-**Windows:**
-```bash
-gradlew submitPrerequisites -PprerequisiteUrl=http://your-app-url
-```
+- **Windows:**
+    ```bash
+    gradlew submitPrerequisites -PprerequisiteUrl=http://your-app-url
+    ```
 
 If you see `BUILD SUCCESSFUL` then you are done.
 If you see `BUILD FAILED` then check your app's deployment and fix any
@@ -246,69 +237,22 @@ errors.
 
 # Other software
 
-Install the following tools by using your package manager, if available.
-You can use your package manager's "`search`" command to find the correct
-package name.  If a package is not available or does not work for some reason,
-you can directly by using the installation instructions provided on the
-tools' site.
+Install the following packages using either your package manager or the
+provided links.
 
-## MariaDB (MySQL)
-
-For your local MySQL server, we recommend using MariaDB 10.1 stable version,
-because this is what is provided on Cloud Foundry. 
-
-**MacOS**
-
-Install [via Homebrew using the official instructions](https://mariadb.com/kb/en/library/installing-mariadb-on-macos-using-homebrew).
-To install 10.1 you can use the `mariadb@10.1` package instead
-of the default `mariadb` one.
-
-**Linux and Windows**
-
-Follow the [official instructions to install 10.1](https://downloads.mariadb.org/)  
-
-## Gradle
-
-https://gradle.org/install/#install
-
-## Maven
-
-https://maven.apache.org/install.html
-
-## MongoDB
-
-https://docs.mongodb.com/manual/installation
-
-## RabbitMQ
-
-https://www.rabbitmq.com/download.html
-
-## Flyway
-
-https://flywaydb.org/getstarted/firststeps/commandline
-
-## TomEE Plume
- 
-* `tomee-plume` on Homebrew
-* http://tomee.apache.org/installing-tomee.html - get the one
-  named "WebProfile (NOT JavaEE7 certified)".
-
-## Graphviz
-
-http://www.graphviz.org
-
-## Minio
- 
-https://www.minio.io/downloads.html
-
-## Nginx
-
-https://nginx.org/en/download.html
-
-## Redis
-
-* `redis` on Homebrew or Chocolatey, `redis-server` on apt.
-* https://redis.io/topics/quickstart
+- MySQL ([download](https://dev.mysql.com/downloads/installer/))
+- Gradle ([download](https://gradle.org/install/#manually))
+- Maven ([download](https://maven.apache.org/guides/getting-started/windows-prerequisites.html))
+- MongoDB ([download](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/))
+- RabbitMQ ([download](https://www.rabbitmq.com/install-windows.html))
+- Flyway ([download](https://flywaydb.org/getstarted/download))
+- TomEE Plume (`tomee-plume` on Homebrew or [download](http://tomee.apache.org/installing-tomee.html)).
+  Get the one named _WebProfile (NOT JavaEE7 certified)_.
+- Graphviz ([download](http://www.graphviz.org/))
+- Minio ([download](https://www.minio.io/downloads.html))
+- Redis (`redis` on Homebrew or Chocolatey, `redis-server` on apt
+  [download](https://redis.io/download))
+- NGINX ([download](https://nginx.org/en/download.html))
 
 # References
 
