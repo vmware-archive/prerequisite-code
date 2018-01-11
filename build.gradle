@@ -20,7 +20,7 @@ jar {
 }
 
 assignments {
-    apiUrl = "https://pal-caddy.cfapps.io"
+    apiUrl = "https://caddy.pal.pivotal.io"
     email = ""
     cohortIdentifier = ""
 }
